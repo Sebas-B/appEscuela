@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Titulo Pagina -->
+    <title> {{title}} </title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/templatemo-digital-trend.css">
+
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="../datatables/datatables.min.css" />
+
+    <!--datables estilo bootstrap 4 CSS-->
+    <link rel="stylesheet" type="text/css" href="../datatables/DataTables-1.10.23/css/dataTables.bootstrap4.min.css">
+
+    <!--font awesome icons-->
+    <script src="https://use.fontawesome.com/39d942f213.js"></script>
+
+    <script type="text/javascript">
+        function showMessagedelete() {
+            alert("Se eliminara el registro.");
+        }
+    </script>
+
+</head>
+
+<body id="ADD">
+
+    <header>
+        {{> navbar}}
+        <hr>
+        <h1>Alumno<h1>
+    </header>
+    <hr>
+
+    <div class="container">
+
+        <header>
+            <h1>Borrar Alumno</h1>
+        </header>
+
+        <div class="col-lg-20">
+            <table id="example" class="table table-striped table-hover table-bordered table-dark" style="width:100%">
+                <thead class="thead-light">
+                    <tr>
+                        <th style="width: 30%"> <i class="fa fa-user"></i> Id</th>
+                        <th style="width: 50%;"> Nombre Completo</th>
+                        <th> <i class="fa fa-trash"></i> Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each delete}}
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <input style="witdh: 25%; font-size: 8pt;" type="text" class="form-control" name="_id"
+                                    value="{{this._id}}" autocomplete="off" readonly></input>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input style="font-size: 8pt;" size="150" type="text" class="form_control"
+                                    name="Domicilio" value="{{this.NombreCompleto}}" readonly></input>
+                            </div>
+                        </td>
+                        </form>
+                        <td>
+                            <a href="./delete/{{this._id}}" class="btn btn-warning" type="button"
+                                onClick='showMessagedelete()'> <i class="fa fa-trash"></i> Borrar </a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br/>
+
+    {{> footer}}
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
+
+    <!-- datatables JS -->
+    <script type="text/javascript" src="../datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="../javascripts/add.js"></script>
+
+</body>
+
+</html>

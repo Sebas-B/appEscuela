@@ -1,0 +1,174 @@
+a {
+  color: #00B7FF;
+}
+ 
+/*Estilos Acivar/Desactivar Docentes y Administración Especialidad*/
+/*Inicio*/
+#ADD label {
+  color: white;
+}
+
+#ADD header .header{
+  position: sticky;
+  top: 0;
+}
+
+#ADD header h1{
+  background-color: #0c8095;
+  color: white;
+  font: 10px;
+}
+
+#ADD header hr{
+  border: 1px solid transparent;
+}
+
+#ADD #ADS footer .site-footer{
+  position: sticky;
+  bottom: 0;
+}
+
+#ADD #ADS{
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#ADS a{
+  color: #00B7FF;
+}
+
+#ADS header{
+   color: black;
+   text-align: center;
+}
+
+#ADS hr{
+  border: 1px solid gray;
+}
+
+#ADD header{
+  text-align: center;
+}
+
+#ADD {		
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(88,9,121,1) 35%, rgba(231,0,255,0.8519782913165266) 100%);
+}
+
+#ADD #ADS th{
+  text-align: right;
+}
+
+#ADD #ADS p{
+  color: white;
+}
+
+#ADD #ADS div .row {
+    min-width: 30%;
+        margin: 40px 20px 20px 0;
+        height: 100%;
+        background: #1D2F3D;
+        padding: 20px;
+        border-radius: 3px;
+        color: #F2F2F2;
+}
+
+#ADD #ADS .row h1{
+  text-align: center;
+  background: #0c8095;
+  color: white;
+}
+
+#ADD #ADDS #agregar form{
+  font-size: large;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: black;
+  text-align: left;
+  color: antiquewhite;
+}
+
+#ADD #ADDS h1 {
+  text-align: center;
+  background: #0c8095;
+  color: white;
+}
+/*Final*/
+
+
+/*Vista de agregar asignatura*/
+/*Inicio*/
+
+#AdminAsig {
+  background: rgb(5,122,140);
+  background: linear-gradient(165deg, rgba(5,122,140,1) 50%, rgba(255,255,255,0.23878205128205132) 50%);
+}
+    
+#AdminAsig header h1{
+  background-color: #0c8095;
+  color: white;
+  font: 10px;
+}
+    
+#AdminAsig header hr{
+  border: 1px solid transparent;
+}
+
+		 
+#AdminAsig #FormAsig{
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+      
+#FormAsig a{
+  color: #00B7FF;
+}
+    
+#tablaAsig header{
+   color: black;
+   text-align: center;
+}
+		 	      
+#AdminAsig #FormAsig hr{
+  border: 1px solid gray;
+}
+    
+#AdminAsig header{
+  text-align: center;
+}
+
+		 	 
+#AdminAsig #FormAsig p{
+  color: white;
+}
+
+		 
+#AdminAsig #FormAsig div .row {
+    min-width: 30%;
+    margin: 40px 20px 20px 0;	
+    height: 100%;	
+    background: #1D2F3D;	
+    padding: 20px;	
+    border-radius: 3px;	
+    color: #F2F2F2;	
+}
+ 
+#AdminAsig #FormAsig .row h1{
+  text-align: center;
+  background: #0c8095;
+  color: white;
+}
+
+/* false */

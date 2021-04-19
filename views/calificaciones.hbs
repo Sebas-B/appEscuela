@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Titulo Pagina -->
+    <title> {{title}} </title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/templatemo-digital-trend.css">
+
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="../datatables/datatables.min.css" />
+
+    <!--datables estilo bootstrap 4 CSS-->
+    <link rel="stylesheet" type="text/css" href="../datatables/DataTables-1.10.23/css/dataTables.bootstrap4.min.css">
+
+    <!--font awesome icons-->
+    <script src="https://use.fontawesome.com/39d942f213.js"></script>
+
+    <script type="text/javascript">
+        function showMessage() {
+            alert("El registro cambiará.");
+        }
+
+        function r1() {
+            var x = document.getElementById("r1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function myFunction() {
+            var x = document.getElementById("r1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function myFunction2() {
+            var x = document.getElementById("r2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function myFunction3() {
+            var x = document.getElementById("global");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+</head>
+
+<body id="ADD">
+
+    <header>
+        {{> navbarCalif}}
+        <hr>
+        <h1>Alumno<h1>
+    </header>
+    <hr>
+
+    <div class="container">
+        <hr>
+
+        <header>
+            <h1>Calificaciones</h1>
+        </header>
+        <hr>
+
+        <div class="col-lg-20">
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-hover table-bordered table-dark"
+                    style="width:100%">
+                    <thead class="thead-light">
+                        <tr>
+                            <th> <i class="fa fa-user"></i> Nombre Completo</th>
+                            <th> <i class="fa fa-book"></i> Nombre Asignatura</th>
+                            <th> <i class="fa fa-book"></i> Numero Unidad</th>
+                            <th> <i class="fa fa-book"></i> Calificacion Ordinario</th>
+                            <th> <i class="fa fa-book"></i> Calificacion R1</th>
+                            <th> <i class="fa fa-book"></i> Calificacion R2</th>
+                            <th> <i class="fa fa-globe"></i> Calificacion Global</th>
+                            <th> <i class="fa fa-check"></i> Actualizar </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each list}}
+                        <tr>
+
+                            <td> {{this.NombreCompleto}} </td>
+
+                            <td> {{this.NombreAsignatura}} </td>
+
+                            <td> {{this.NumUnidad}} </td>
+
+                            <td>
+
+                                <form action="./updateCalif" method="POST">
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" name="_id" value="{{this._id}}"
+                                            autocomplete="off" readonly>
+                                        </input>
+                                    </div>
+                                    <div class="form-group">
+                                        <input style="witdh: 10%;" type="Number" class="form_control form-control-sm"
+                                            name="CalifOrdinario" value="{{this.CalifOrdinario}}" autocomplete="off"
+                                            required="true">
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="myFunction()">Calif</button>
+                                    </div>
+                            </td>
+                            <td>
+                                <br />
+                                <div id="r1" class="form-group" style="display: none;">
+                                    <input style="witdh: 10%;" type="Number" class="form_control form-control-sm"
+                                        name="CalifRecuperacion1" value="{{this.CalifRecuperacion1}}" autocomplete="off">
+                                    <button type="button" class="btn btn-primary" onclick="myFunction2()">Calif
+                                        R1</button>
+                                </div>
+                            </td>
+                            <td>
+                                <br />
+                                <div id="r2" class="form-group" style="display: none;">
+                                    <input style="witdh: 10%;" type="Number" class="form_control form-control-sm"
+                                        name="CalifRecuperacion2" value="{{this.CalifRecuperacion2}}" autocomplete="off">
+                                    <button type="button" class="btn btn-primary" onclick="myFunction3()">Calif
+                                        R2</button>
+                                </div>
+                            </td>
+                            <td>
+                                <br />
+                                <div id="global" class="form-group" style="display: none;">
+                                    <input style="witdh: 10%;" type="Number" class="form_control form-control-sm"
+                                        name="CalifGlobal" value="{{this.CalifGlobal}}" autocomplete="off"
+                                        style="display: none;">
+                                </div>
+                            </td>
+                            <td>
+                                <br />
+                                <div class="form-group">
+                                    <button type="submit" onClick='showMessage()' class="btn btn-dark">
+                                        <i class="fa fa-database"></i> Cambiar </button>
+                                </div>
+                            </td>
+                            </form>
+                        </tr>
+
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>
+
+
+    {{> footer}}
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
+
+    <!-- datatables JS -->
+    <script type="text/javascript" src="../datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="../javascripts/add.js"></script>
+
+</body>
+
+</html>

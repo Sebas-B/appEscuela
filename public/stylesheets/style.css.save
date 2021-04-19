@@ -1,0 +1,32 @@
+a {
+  color: #00B7FF;
+}
+
+#ADS{
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#ADS a{
+  color: #00B7FF;
+}
+
+#ADS header{
+   color: black;
+   text-align: center;
+}
+
+#ADS hr{
+  border: 1px solid gray;
+}
+
+#ADD header{
+  text-align: center;
+}
+
+#ADD {			 
+  background-image: url("../images/fondo_login.jpg");     
+  background-color: transparent;
+}   
+
+

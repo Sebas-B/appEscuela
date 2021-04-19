@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Titulo Pagina -->
+    <title> {{title}} </title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/templatemo-digital-trend.css">
+
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="../datatables/datatables.min.css" />
+
+    <!--datables estilo bootstrap 4 CSS-->
+    <link rel="stylesheet" type="text/css" href="../datatables/DataTables-1.10.23/css/dataTables.bootstrap4.min.css">
+
+    <!--font awesome icons-->
+    <script src="https://use.fontawesome.com/39d942f213.js"></script>
+
+    <script type="text/javascript">
+        function showMessage() {
+            alert("El registro cambiará.");
+        }
+    </script>
+
+</head>
+
+<body id="ADD">
+
+    <header>
+        {{> navbar}}
+        <hr>
+        <h1>Alumno<h1>
+    </header>
+    <hr>
+
+    <div class="container">
+        <header>
+            <h1>Registrar</h1>
+        </header>
+        
+        <form action="./" method="POST" autocomplete="off">
+            <div class="form-group">
+                <label for="formulario">Nombre Propio</label>
+                <input type="text" class="form-control" id="formulario" name="NombrePropio"
+                    placeholder="Nombre(s) (SOLO NOMBRES)" value="{{this.NombrePropio}}" autocomplete="off"
+                    required="true">
+            </div>
+            <div class="form-group">
+                <label for="formulario">Apellido Paterno</label>
+                <input type="text" class="form-control" id="formulario" name="ApePaterno" placeholder="Apellido paterno"
+                    value="{{this.ApePaterno}}" autocomplete="off" required="true">
+            </div>
+            <div class="form-group">
+                <label for="formulario">Apellido Materno</label>
+                <input type="text" class="form-control" id="formulario" name="ApeMaterno" placeholder="Apellido Materno"
+                    value="{{this.ApeMaterno}}" autocomplete="off" required="true">
+            </div>
+            <div class="form-group">
+                <label for="formulario">Domicilio</label>
+                <input type="text" class="form-control" id="formulario" name="Domicilio"
+                    placeholder="Calle #Numero Col. Colonia, Ciudad" value="{{this.Domicilio}}" autocomplete="off"
+                    required="true">
+            </div>
+            <div class="form-group">
+                <label for="formulario">Telefono</label>
+                <input type="number" class="form-control" id="formulario" name="Telefono"
+                    placeholder="Numero de telefono (SOLO NUMEROS)" value="{{this.Telefono}}" autocomplete="off"
+                    required="true">
+            </div>
+            <div class="form-group">
+                <label for="formulario">Correo Electronico</label>
+                <input type="text" class="form-control" id="formulario" name="CorreoElectrónico"
+                    placeholder="email@example.com" value="{{this.CorreoElectrónico}}" autocomplete="off"
+                    required="true">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Cuatrimestre Actual</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="CuatrimestreCusaActual"
+                    value="{{this.CuatrimestreCusaActual}}">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1"> Nombre Carrera</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="NombreCarrera"
+                    value="{{this.NombreCarrera}}">
+                    <option value="Programación">Programación</option>
+                    <option value="Quimico Biologo">Quimico Biologo</option>
+                    <option value="Diseño Digital">Diseño Digital</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Animación">Animación</option>
+                    <option value="Mecatronica">Mecatronica</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+
+        <hr>
+
+        <header>
+            <a href="./delete" class="btn btn-warning btn-lg" type="button"> <i class="fa fa-trash"></i> Borrar Alumnos
+            </a>
+        </header>
+
+        <hr>
+
+        <header>
+            <h1>Listado y Actualizar</h1>
+        </header>
+        <hr>
+
+        <div class="col-lg-20">
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-hover table-bordered table-dark"
+                    style="width:100%">
+                    <thead class="thead-light">
+                        <tr>
+                            <th> <i class="fa fa-user"></i> Nombre</th>
+                            <th> <i class="fa fa-check"></i> Nombre Carrera</th>
+                            <th> <i class="fa fa-edit"></i> C. Actual</th>
+                            <th> <i class="fa fa-briefcase"></i> Domicilio</th>
+                            <th> <i class="fa fa-envelope"></i> Telefono</th>
+                            <th> <i class="fa fa-exclamation"></i> Correo </th>
+                            <th> <i class="fa fa-check"></i> Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each list}}
+                        <tr>
+
+                            <td> {{this.NombrePropio}} {{this.ApePaterno}} {{this.ApeMaterno}} </td>
+
+                            <td> {{this.NombreCarrera}} </td>
+
+                            <td> {{this.CuatrimestreCusaActual}}</td>
+
+                            <td>
+
+                                <form action="./update" method="POST">
+
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" name="_id" value="{{this._id}}"
+                                            autocomplete="off" readonly>
+                                        </input>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form_control form-control-sm" name="Domicilio"
+                                            value="{{this.Domicilio}}" autocomplete="off" required="true">
+                                    </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form_control form-control-sm" name="Telefono"
+                                        value="{{this.Telefono}}" autocomplete="off" required="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form_control form-control-sm" name="CorreoElectrónico"
+                                        value="{{this.CorreoElectrónico}}" autocomplete="off" required="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <button type="submit" onClick='showMessage()' class="btn btn-dark">
+                                        <i class="fa fa-database"></i> Cambiar </button>
+                                </div>
+                            </td>
+                            </form>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>
+
+
+    {{> footer}}
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
+
+    <!-- datatables JS -->
+    <script type="text/javascript" src="../datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="../javascripts/add.js"></script>
+
+</body>
+
+</html>
